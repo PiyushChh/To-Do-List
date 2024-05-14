@@ -1,9 +1,17 @@
-export default function Item({itemName}){
+export default function Item({item,handleCheckBoxClick}){
     return(
-        <div>
-            <ul>
-                <li>{itemName}</li>
-            </ul>
+        <div id="item-container">
+                
+                <li 
+                className="item"
+                style={{ textDecoration: item.checked? 'line-through': 'none',
+                backgroundColor: item.checked? 'lightgray':'white'
+                }} 
+                onClick={()=>handleCheckBoxClick(item.id)}
+                >
+                {item.name}
+                </li>
+         
             
         </div>
     )
